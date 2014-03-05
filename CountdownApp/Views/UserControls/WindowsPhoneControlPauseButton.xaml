@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="CountdownApp.WindowsPhoneControlPauseButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+             d:DesignHeight="480"
+             d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Ellipse HorizontalAlignment="Left"
+                 Height="268"
+                 VerticalAlignment="Top"
+                 Width="268"
+                 Fill="Gray" />
+        <Ellipse HorizontalAlignment="Left"
+                 Height="266"
+                 VerticalAlignment="Top"
+                 Width="266"
+                 Fill="White" Margin="1,1,0,0" />
+        <Ellipse HorizontalAlignment="Left"
+                 Height="250"
+                 Stroke="Black"
+                 VerticalAlignment="Top"
+                 Width="250"
+                 StrokeThickness="0"
+                 Fill="{StaticResource GreenColor}" Margin="9,9,0,0"
+                 x:Name="PauseButton"
+                 Tap="PauseButton_Tap"/>
+        <StackPanel  Orientation="Horizontal"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Tap="PauseButton_Tap"
+                     Margin="72,65,0,0">
+            <Rectangle Fill="White"
+                       HorizontalAlignment="Left"
+                       Height="140"
+                       VerticalAlignment="Top"
+                       Width="45" />
+            <Rectangle Fill="White"
+                       HorizontalAlignment="Left"
+                       Height="140"
+                       VerticalAlignment="Top"
+                       Width="45"
+                       Margin="30,0,0,0" />
+        </StackPanel>
+    </Grid>
+</UserControl>

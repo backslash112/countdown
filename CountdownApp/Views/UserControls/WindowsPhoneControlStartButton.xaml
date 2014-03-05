@@ -1,0 +1,53 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+             x:Class="CountdownApp.UserControls.WindowsPhoneControlStartButton"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}">
+
+    <Grid x:Name="LayoutRoot">
+        <Ellipse HorizontalAlignment="Left"
+                 Height="268"
+                 VerticalAlignment="Top"
+                 Width="268"
+                 Fill="Gray" />
+        <Ellipse HorizontalAlignment="Left"
+                 Height="266"
+                 VerticalAlignment="Top"
+                 Width="266"
+                 Fill="White"
+                 Margin="1,1,0,0" />
+        <Ellipse HorizontalAlignment="Left"
+                 Height="250"
+                 Stroke="Black"
+                 VerticalAlignment="Top"
+                 Width="250"
+                 StrokeThickness="0"
+                 Fill="{StaticResource GreenColor}"
+                 Margin="9,9,0,0"
+                 Tap="StartButton_Tap" />
+
+        <es:RegularPolygon Fill="White"
+                           HorizontalAlignment="Left"
+                           Height="130"
+                           InnerRadius="1"
+                           PointCount="3"
+                           Stretch="Fill"
+                           UseLayoutRounding="False"
+                           VerticalAlignment="Top"
+                           Width="150"
+                           RenderTransformOrigin="0.5,0.5"
+                           Margin="83.5,69,0,0"
+                           x:Name="StartButton"
+                           Tap="StartButton_Tap">
+            <es:RegularPolygon.RenderTransform>
+                <CompositeTransform Rotation="90" />
+            </es:RegularPolygon.RenderTransform>
+        </es:RegularPolygon>
+
+    </Grid>
+</UserControl>

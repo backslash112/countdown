@@ -1,0 +1,210 @@
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+                            xmlns:UserControls="clr-namespace:CountdownApp.UserControls"
+                            xmlns:Views="clr-namespace:CountdownApp.Views"
+                            x:Class="CountdownApp.CountdownMainPage"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.Opacity="0"
+                            Loaded="PhoneApplicationPage_Loaded">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <phone:PhoneApplicationPage.Resources>
+        <Views:BoolToVisibleConverter x:Key="BoolToVisibleConverter" />
+        <Views:SoundListSelectedIndexToVisibilityConverter x:Key="SoundListSelectedIndexToVisibilityConverter" />
+    </phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal" />
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal" />
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush" />
+    </phone:PhoneApplicationPage.Foreground>
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock Text="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+                       Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock Text="{Binding LocalizedResources.MainPageTitle, Source={StaticResource LocalizedStrings}}"
+                       Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="10,0,14,0">
+
+            <!--Margin="0,0,0,160"-->
+            <!--<toolkit:ListPicker x:Name="SecondSoundListPicker" HorizontalAlignment="Right"
+                                Margin="0,205,12,0"
+                                VerticalAlignment="Top"
+                                Header="{Binding LocalizedResources.SecondSoundText,Source={StaticResource LocalizedStrings}}"
+                                Width="432"
+                                SelectionChanged="SecondSoundListPicker_SelectionChanged_1">
+                <toolkit:ListPicker.Items>
+                    <toolkit:ListPickerItem Content="{Binding LocalizedResources.YesText,Source={StaticResource LocalizedStrings}}" Tag="T" />
+                    <toolkit:ListPickerItem Content="{Binding LocalizedResources.NoText,Source={StaticResource LocalizedStrings}}" Tag="F"/>
+                </toolkit:ListPicker.Items>
+            </toolkit:ListPicker>-->
+
+
+            <!--<toolkit:TimePicker x:Name="TimePickerCountdownTime"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Width="456"
+                                Header="{Binding Path=LocalizedResources.SelectCountdownMsg,Source={StaticResource LocalizedStrings}}" />-->
+            <Controls:TimeSpanPicker x:Name="TimePickerCountdownTime"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Top"
+                                     Width="456"
+                                     Header="{Binding LocalizedResources.SelectCountdownMsg, Source={StaticResource LocalizedStrings}}"
+                                     Background="{StaticResource PhoneBackgroundBrush}"
+                                     BorderThickness="3"
+                                     BorderBrush="{StaticResource PhoneBorderBrush}"
+                                     Foreground="{StaticResource PhoneForegroundBrush}" />
+            <toolkit:ListPicker x:Name="SoundsListPicker"
+                                ItemsSource="{Binding Sounds}"
+                                SelectedItem="{Binding Sound}"
+                                Header="{Binding LocalizedResources.SoundText, Source={StaticResource LocalizedStrings}}"
+                                HorizontalAlignment="Center"
+                                Margin="12,100,12,0"
+                                VerticalAlignment="Top"
+                                Width="432"
+                                SelectionChanged="SoundsListPicker_SelectionChanged_1">
+                <toolkit:ListPicker.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </toolkit:ListPicker.ItemTemplate>
+
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <!--无-->
+                            <StackPanel Grid.Row="0"
+                                        Orientation="Horizontal"
+                                        Margin="10,18,0,18"
+                                        Visibility="{Binding ID, ConverterParameter=-2, Converter={StaticResource SoundListSelectedIndexToVisibilityConverter}}">
+                                <Image Width="40"
+                                       Height="40"
+                                       Source="/Images/none.png" />
+                                <TextBlock Text="{Binding Name}"
+                                           Margin="15,0,0,0"
+                                           FontSize="35"
+                                           FontFamily="{StaticResource PhoneFontFamilyLight}" />
+                            </StackPanel>
+                            <!--震动-->
+                            <StackPanel Grid.Row="1"
+                                        Orientation="Horizontal"
+                                        Margin="10,18,10,60"
+                                        Visibility="{Binding ID, ConverterParameter=-1, Converter={StaticResource SoundListSelectedIndexToVisibilityConverter}}">
+                                <Image Width="40"
+                                       Height="40"
+                                       Source="/Images/vibrate.png" />
+                                <TextBlock Text="{Binding Name}"
+                                           Margin="15,0,0,0"
+                                           FontSize="35"
+                                           FontFamily="{StaticResource PhoneFontFamilyLight}" />
+                            </StackPanel>
+                            <!--声音列表-->
+                            <StackPanel Grid.Row="2"
+                                        Orientation="Horizontal"
+                                        Margin="10 18 0 18"
+                                        Visibility="{Binding ID, ConverterParameter=0, Converter={StaticResource SoundListSelectedIndexToVisibilityConverter}}">
+                                <Image x:Name="ImgPlay"
+                                       Tap="ImgPlay_Tap_1"
+                                       Width="40"
+                                       Height="40"
+                                       Source="/Images/Play.png"
+                                       Tag="{Binding ID}" />
+                                <TextBlock Text="{Binding Name}"
+                                           Margin="15 0 0 0"
+                                           FontSize="35"
+                                           FontFamily="{StaticResource PhoneFontFamilyLight}" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
+            </toolkit:ListPicker>
+
+
+
+            <UserControls:WindowsPhoneControlStartButton x:Name="StartButton"
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"
+                                                         HorizontalContentAlignment="Left"
+                                                         Click="StartButton_Click">
+                <UserControls:WindowsPhoneControlStartButton.Projection>
+                    <PlaneProjection GlobalOffsetZ="-250"
+                                     GlobalOffsetX="120"
+                                     GlobalOffsetY="180" />
+                </UserControls:WindowsPhoneControlStartButton.Projection>
+            </UserControls:WindowsPhoneControlStartButton>
+            <TextBox HorizontalAlignment="Left"
+                     Height="72"
+                     Margin="0,230,0,0"
+                     TextWrapping="Wrap"
+                     x:Name="TextBoxName"
+                     Text="{Binding Name}"
+                     VerticalAlignment="Top"
+                     Width="456"
+                     MaxLength="50" />
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="12,205,0,0"
+                       TextWrapping="Wrap"
+                       Text="{Binding LocalizedResources.NameText, Source={StaticResource LocalizedStrings}}"
+                       VerticalAlignment="Top"
+                       Foreground="{StaticResource PhoneSubtleBrush}" />
+
+        </Grid>
+        <!--<Views:BlockControl x:Name="BlockControl"
+                            HorizontalAlignment="Left"
+                            Height="100"
+                            Grid.Row="1"
+                            VerticalAlignment="Top"
+                            Margin="12,0,0,0" />-->
+
+    </Grid>
+</phone:PhoneApplicationPage>

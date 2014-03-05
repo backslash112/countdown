@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alarm" xml:space="preserve">
+    <value>Alarm</value>
+  </data>
+  <data name="AlarmText" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="AlwaysLightText" xml:space="preserve">
+    <value>Always Light</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>MenuItem</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Countdown</value>
+  </data>
+  <data name="BuyFullVersion" xml:space="preserve">
+    <value>Get an ad-free version</value>
+  </data>
+  <data name="CheckBoxContent" xml:space="preserve">
+    <value>Do not ask me again</value>
+  </data>
+  <data name="Checked" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="CustomerMessageBoxCation" xml:space="preserve">
+    <value>Please stop what you're doing.</value>
+  </data>
+  <data name="CustomerMessageBoxHeader" xml:space="preserve">
+    <value>Szooze for:</value>
+  </data>
+  <data name="CustomerMessageBoxLeftButton" xml:space="preserve">
+    <value>szooze</value>
+  </data>
+  <data name="CustomerMessageBoxRightButton" xml:space="preserve">
+    <value>dismiss</value>
+  </data>
+  <data name="DefaultTimeText" xml:space="preserve">
+    <value>Default time</value>
+  </data>
+  <data name="DownloadFullVersionMsg" xml:space="preserve">
+    <value>The current version is a trial version, timing features are disabled. Do you want to upgrade to full version?</value>
+  </data>
+  <data name="DownloadFullVersionTitle" xml:space="preserve">
+    <value>Download the Full Version</value>
+  </data>
+  <data name="ErrorTitleText" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ExitConfirmCheckBoxText" xml:space="preserve">
+    <value>Exit Confirmation</value>
+  </data>
+  <data name="ExitConfirmMsg" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="ExitText" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="FiveMinutes" xml:space="preserve">
+    <value>5 minutes</value>
+  </data>
+  <data name="FourHours" xml:space="preserve">
+    <value>4 hours</value>
+  </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>new</value>
+  </data>
+  <data name="MsgBoxCaption" xml:space="preserve">
+    <value>Help Spread the Word</value>
+  </data>
+  <data name="MsgBoxLeftBtn" xml:space="preserve">
+    <value>Maybe Later</value>
+  </data>
+  <data name="MsgBoxMsg" xml:space="preserve">
+    <value>If you like this app, please rate it in the App Store. Thanks!</value>
+  </data>
+  <data name="MsgBoxRightBtn" xml:space="preserve">
+    <value>Rate It Now</value>
+  </data>
+  <data name="NameText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NoText" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OneHour" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="OneMinute" xml:space="preserve">
+    <value>1 minute</value>
+  </data>
+  <data name="OrText" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="RateUs" xml:space="preserve">
+    <value>rate</value>
+  </data>
+  <data name="RepeatText" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-GB</value>
+  </data>
+  <data name="SampleProperty" xml:space="preserve">
+    <value>Sample Property</value>
+  </data>
+  <data name="SaveTheLastTimeText" xml:space="preserve">
+    <value>Save the last selected time</value>
+  </data>
+  <data name="SecondSoundText" xml:space="preserve">
+    <value>Second Sound</value>
+  </data>
+  <data name="SelectCountdownMsg" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="SendEmailContentText" xml:space="preserve">
+    <value>First of all thank you for using this application, if you have good ideas or suggestions, please do not begrudge us, may be added to the next version of your good ideas!</value>
+  </data>
+  <data name="SendEmailTitleText" xml:space="preserve">
+    <value>Send a email to the developers?</value>
+  </data>
+  <data name="SettingsText" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SoundNoneText" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="SoundText" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="SoundVibrateText" xml:space="preserve">
+    <value>vibrate</value>
+  </data>
+  <data name="StartMenu" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StopMenu" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TenMinutes" xml:space="preserve">
+    <value>10 minutes</value>
+  </data>
+  <data name="TimeOut" xml:space="preserve">
+    <value>Time Out</value>
+  </data>
+  <data name="UnChecked" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="UnderwayTitle" xml:space="preserve">
+    <value>timing</value>
+  </data>
+  <data name="ValidateTimeMsg" xml:space="preserve">
+    <value>The time must be greater than 0!</value>
+  </data>
+  <data name="YesText" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>
